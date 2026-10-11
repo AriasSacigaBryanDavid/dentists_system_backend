@@ -15,4 +15,11 @@ urlpatterns = [
     # TODO: USER - PATH
     #---------------------------------------------------------------#
     path('users/selector/filter/paginated/', UserSelectorView.as_view(), name='user-selector'),
+    #---------------------------------------------------------------#
+    # TODO: USER - PATH
+    #---------------------------------------------------------------#
+    path('users/filter/paginated/', PaginatedUsersView.as_view(), name='user-filter'),
+    path('users/doctors/', DoctorsListView.as_view(), name='doctors-list'),
+    path('users/', UsersView.as_view(), name='user-crud'),
+    path('users/<uuid:uuid>/', UsersView.as_view(), name='user-crud'),
 ]

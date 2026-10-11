@@ -50,6 +50,8 @@ THIRD_PARTY_APPS = [
 
 # django's own libraries
 OWN_APPS = [
+    'apps.reservation.apps.ReservationConfig',
+    'apps.customers.apps.CustomersConfig',
     'apps.base.apps.BaseConfig',
     'apps.user.apps.UserConfig',
 ]
@@ -162,9 +164,9 @@ REST_FRAMEWORK = {
 #============================= /API LIBRARY ===============================#
 #================================= TOKEN =================================#
 SIMPLE_JWT ={
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
     # 'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'REFRESH_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(hours=24),
     'UPDATE_LAST_LOGIN': True,
     'SIGNING_KEY': SECRET_KEY,
     'ROTATE_REFRESH_TOKENS': False,

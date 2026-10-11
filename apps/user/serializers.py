@@ -30,5 +30,9 @@ class UserDynamicFieldsSerializer(DynamicFieldsModelSerializer):
 
     class Meta:
         model = User
-        fields = '__all__'
         exclude = ['id']
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = '__all__'
